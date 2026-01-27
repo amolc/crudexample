@@ -16,8 +16,23 @@ def animal_sounds(request):
     d = Dog(name="Buddy", breed="Golden Retriever")
     c = Cat(name="Whiskers", color="Black")
     animals = [d, c]
-    sounds = [animal.speak() for animal in animals]
-    return JsonResponse({"sounds": sounds})
+    
+    # Better example: getting specific details using polymorphism
+    animal_info = [animal.speak() for animal in animals]
+    
+    return JsonResponse({
+        "all_animal_info": animal_info,
+        "dog_details": {
+            "name": d.name,
+            "breed": d.breed,
+            "sound": d.speak()
+        },
+        "cat_details": {
+            "name": c.name,
+            "color": c.color,
+            "sound": c.speak()
+        }
+    })
 
 # Encapsulation
 @csrf_exempt

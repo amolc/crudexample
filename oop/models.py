@@ -27,13 +27,13 @@ class Dog(Animal):
     breed = models.CharField(max_length=100)
 
     def speak(self):
-        return "Dog barks"
+        return f"The {self.breed} named {self.name} says Woof!"
 
 class Cat(Animal):
     color = models.CharField(max_length=100)
 
     def speak(self):
-        return "Cat meows"
+        return f"The {self.color} cat named {self.name} says Meow!"
 
 # Polymorphism – Method Overriding
 # Same method name, different behavior at runtime.
