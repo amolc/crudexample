@@ -34,8 +34,7 @@ def animal_sounds(request):
         }
     })
 
-# Encapsulation
-@csrf_exempt
+
 def bank_operations(request):
     if request.method == 'POST':
         data = json.loads(request.body)
