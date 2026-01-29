@@ -55,6 +55,18 @@ This document provides a comprehensive list of all available endpoints in the pr
 
 ---
 
+## 🧠 Memory Management Demos (`/memory/`)
+*Base URL: `/memory/`*
+
+| Endpoint | Description | Key Concept |
+| :--- | :--- | :--- |
+| `/ref-count/` | Shows how reference counts increase and decrease. | **Reference Counting** |
+| `/gc-status/` | Displays current GC thresholds and collection counts. | **Generational GC** |
+| `/optimization/` | Compares memory size of Lists vs Generators and Slotted classes. | **Optimization** |
+| `/cyclic-refs/` | Creates circular references and triggers manual cleanup. | **Cyclic References** |
+
+---
+
 ## 🛠️ Quick Demo Commands
 
 ### **1. Test Login**

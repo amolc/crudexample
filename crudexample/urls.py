@@ -22,4 +22,5 @@ urlpatterns = [
     path('customers/', include('customers.urls')),
     path('oop/', include('oop.urls')),
     path('concepts/', include('decorators.urls')),
+    path('memory/', include('memorymanage.urls')),
 ]
