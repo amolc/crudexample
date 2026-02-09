@@ -181,3 +181,4 @@ classDiagram
     - **Command**: Turns a request into a stand-alone object that contains all information about the request.
 
     test
+thus is a test
