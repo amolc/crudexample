@@ -179,3 +179,5 @@ classDiagram
     - **Observer**: Defines a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing.
     - **Strategy**: Defines a family of algorithms, puts each of them into a separate class, and makes their objects interchangeable.
     - **Command**: Turns a request into a stand-alone object that contains all information about the request.
+
+    test
