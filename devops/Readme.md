@@ -108,3 +108,52 @@ venv/
 .env
 db.sqlite3
 ```
+## **5. Branching and Merging**
+
+Branching allows you to develop features, fix bugs, or experiment in a contained area without affecting the main codebase.
+
+### **Working with Branches**
+
+- **Create a new branch**:
+  ```bash
+  git branch feature-name
+  ```
+- **Switch to a branch**:
+  ```bash
+  git checkout feature-name
+  ```
+- **Create and switch in one command**:
+  ```bash
+  git checkout -b feature-name
+  ```
+- **List all branches**:
+  ```bash
+  git branch
+  ```
+
+### **Merging Branches**
+
+Once your work in a branch is complete and tested, you can merge it back into the main branch (usually `main`).
+
+1.  **Switch to the target branch** (e.g., `main`):
+    ```bash
+    git checkout main
+    ```
+2.  **Update the target branch**:
+    ```bash
+    git pull origin main
+    ```
+3.  **Merge the feature branch**:
+    ```bash
+    git merge feature-name
+    ```
+4.  **Resolve Conflicts** (if any):
+    If Git cannot automatically merge, it will mark the conflicts in the files. You must manually edit the files to resolve them, then:
+    ```bash
+    git add <resolved-file>
+    git commit -m "fix: resolve merge conflicts"
+    ```
+5.  **Delete the feature branch** (optional):
+    ```bash
+    git branch -d feature-name
+    ```

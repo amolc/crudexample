@@ -104,6 +104,19 @@ Design patterns are generally categorized into three main groups:
 
 ### **1. Creational Patterns**
 These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation.
+
+#### **Visual Concept: Singleton Pattern**
+The Singleton pattern ensures that a class has only one instance and provides a global point of access to it.
+
+```mermaid
+classDiagram
+    class Singleton {
+        -instance: Singleton$
+        -Singleton()
+        +getInstance() Singleton$
+    }
+```
+
 - **Examples**:
     - **Singleton**: Ensures a class has only one instance.
     - **Factory Method**: Provides an interface for creating objects but allows subclasses to alter the type of objects that will be created.
@@ -111,6 +124,27 @@ These patterns deal with object creation mechanisms, trying to create objects in
 
 ### **2. Structural Patterns**
 These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.
+
+#### **Visual Concept: Adapter Pattern**
+The Adapter pattern allows objects with incompatible interfaces to collaborate by "adapting" one interface to another.
+
+```mermaid
+classDiagram
+    class Target {
+        <<interface>>
+        +request()
+    }
+    class Adapter {
+        -adaptee: Adaptee
+        +request()
+    }
+    class Adaptee {
+        +specificRequest()
+    }
+    Target <|.. Adapter
+    Adapter --> Adaptee
+```
+
 - **Examples**:
     - **Adapter**: Allows objects with incompatible interfaces to collaborate.
     - **Decorator**: Attaches new behaviors to objects by placing these objects inside special wrapper objects.
@@ -118,6 +152,29 @@ These patterns explain how to assemble objects and classes into larger structure
 
 ### **3. Behavioral Patterns**
 These patterns are concerned with algorithms and the assignment of responsibilities between objects.
+
+#### **Visual Concept: Observer Pattern**
+The Observer pattern defines a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing.
+
+```mermaid
+classDiagram
+    class Subject {
+        -observers: List~Observer~
+        +attach(Observer)
+        +detach(Observer)
+        +notify()
+    }
+    class Observer {
+        <<interface>>
+        +update()
+    }
+    class ConcreteObserver {
+        +update()
+    }
+    Subject o-- Observer
+    Observer <|.. ConcreteObserver
+```
+
 - **Examples**:
     - **Observer**: Defines a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing.
     - **Strategy**: Defines a family of algorithms, puts each of them into a separate class, and makes their objects interchangeable.
